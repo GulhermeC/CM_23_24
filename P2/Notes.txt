@@ -1,0 +1,31 @@
+4- Order the capture by the column ‘Protocol’; scrolling down, identify the protocols present in the
+capture, the actors involved (‘Source’ and ‘Destination’) and the direction of the communication
+
+	Protocols HCI_CMD (host -> controller) and HCI_EVT (controller -> host)
+
+5- Reorder the capture by the column ‘No.”; Looking into the ‘Source’, ‘Destination’ and ‘Protocol’
+columns, observe the sequence of the messages exchange
+	
+	Each HCI_CMD protocol is responded with a HCI_EVT procotol
+
+6- Order the capture using the column ‘Info’ to see the different messages grouped by its specific type. For
+instance, check the frequency of the Inquiry process. Look at the ‘Read’, ‘Set’ and ‘Write’ messages used
+in the start-up and the overall process.
+
+	Looking at the Sent and Rcvd Inquiry, the Inquiry process happens with around 10 second intervals
+
+7- Order again by the column ‘No.”; Observe and analyse the startup process; see the Read and Write
+commands sent to controller and the exchanged information; observe via the timing information and
+the time taken by the process
+
+	First the host sends a reset to the controller
+	Aftet that the host reads several parameters of the controller and writes its configuration
+
+8- Observe and analyse the periodic Inquiry process. Identify the involved messages of the process.
+
+	Inquiry has 3 messages: 
+		(host -> controller) Sent Inquiry
+		(controller -> host) Rcvd Command Status (Inquiry)
+		(controller -> host) Rcvd Inquiry  Complete
+
+	This process occurs every 10 seconds
