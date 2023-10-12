@@ -1,0 +1,46 @@
+4 - 
+a) Coloque o interface a monitorar no outro canal (3 vs 7) e observe a diferença
+Nao existe sobreposição entre as frequencias, no canal 3 só se ve os beacons da LABCOM 330, no canal 5 só se ve os beacons LABCOM 331
+
+b) Coloque agora o interface a monitorar no canal 5 e observe a diferença. O
+comportamento é o mesmo? Consulte o Anexo IX para dar a sua resposta.
+No canal 5 existe sobreposição, ou seja, consegue-se ver os beacons da LABCOM 330 e LABCOM 331
+
+5 - Beacon Frame
+Type: Management Frame
+Subtype: 8
+
+7 - 5G channels only show packets on their frequency, no others for other channels/frequencys
+
+8 - 
+wlan.fc.type == 0 | Management
+	Probe request
+	Probe response
+	Beacon frame
+
+wlan.fc.type == 1 | Control
+	Acknowledgment
+
+wlan.fc.type == 2 | Data
+	Null function (no data)
+	Data
+
+10 -
+	Periocidade = 0.1 Segundos
+ 	Fixed parameters
+		Timestamp
+		Beacon Interval
+		Capabilities Information
+	Tagged parameters
+		SSID parameter set
+		Suported rates
+			Tag Number
+			Tag length
+			Suported Rates
+		DS parameter set
+		Extended suport rates
+		ERP information
+		Traffic Indication Map
+		HT capabilities
+		HT information
+		Vendor specific
