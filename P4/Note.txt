@@ -1,0 +1,32 @@
+1. Configuration analyis
+
+	b. Parameter:
+		i. MCC = 001 and MNC = 01 -> amfcfg.yaml
+		ii. NR Cell Identities = 0x00000010 / TAC = 1
+			NR Cell Identities = 0x00000001 / TAC = 2
+		iii. Slice 1: 0x1 and 0x010203
+			 Slice 2: 0x2 and 0x112233
+		iv. Suported DNN: internet
+		v.  List of SUPIs:
+			imsi-001010000000011, imsi-001010000000012 and imsi-001010000000021
+
+3. gNBs start
+
+	4.
+		b. SCTP connection setup and later exchanged heartbeats
+			gNB1-N2 -> AMF-N2: init
+			AMF-N2 -> gNB1-N2: init_ack
+
+			gNB1-N2 -> AMF-N2: cookie_echo
+			AMF-N2 -> gNB1-N2: cookie_ack
+			
+			AMF-N2 -> gNB1-N2: sack
+			gNB1-N2 -> AMF-N2: sack
+
+			AMF-N2 -> gNB1-N2: heartbeat
+			gNB1-N2 -> AMF-N2: heartbeat_ack
+			gNB1-N2 -> AMF-N2: heartbeat
+			AMF-N2 -> gNB1-N2: heartbeat_ack
+			
+	6. Compare the new NGsetupRequest and NGsetupResponse
+		Cell identifiers and the supported slices are different between the 2 cells
